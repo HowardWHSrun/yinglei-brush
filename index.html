@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>颖蕾湖笔 - 传统书法毛笔专家</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- 添加Google字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>颖蕾湖笔</h1>
+                <span>黄惠琴手作·四十年传承</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#brush-knowledge">毛笔文化</a></li>
+                <li><a href="#products">产品展示</a></li>
+                <li><a href="#about">关于我们</a></li>
+                <li><a href="#contact">联系我们</a></li>
+                <li><a href="#cart" class="cart-icon"><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span></a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页横幅 -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>颖蕾湖笔</h1>
+            <h2>四十年匠心传承，黄惠琴手作精品</h2>
+            <p>以质量赢得市场，信誉至上诚信经营为原则，售后服务为重点。四十多年的制笔经验，每一支笔都是匠心之作。传承千年湖笔文化，演绎书法艺术之美。</p>
+            <div class="hero-buttons">
+                <button class="cta-button primary" onclick="scrollToProducts()">
+                    <i class="fas fa-shopping-bag"></i> 浏览产品
+                </button>
+                <button class="cta-button secondary" onclick="scrollToBrushKnowledge()">
+                    <i class="fas fa-book-open"></i> 了解毛笔文化
+                </button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="image-frame">
+                <img src="images/brush-01.JPG" alt="精美毛笔展示">
+                <div class="image-overlay">
+                    <div class="overlay-text">
+                        <h3>传统工艺</h3>
+                        <p>纯手工制作</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 毛笔文化知识介绍 -->
+    <section id="brush-knowledge" class="brush-knowledge">
+        <div class="container">
+            <div class="section-header">
+                <h2>毛笔文化与工艺</h2>
+                <p class="section-subtitle">探索千年传承的毛笔制作艺术，了解湖笔的独特魅力</p>
+            </div>
+            
+            <!-- 毛笔历史 -->
+            <div class="knowledge-content">
+                <div class="knowledge-section">
+                    <div class="knowledge-text">
+                        <h3><i class="fas fa-scroll"></i> 湖笔的历史渊源</h3>
+                        <p>湖笔，又称"湖颖"，产于浙江省湖州市，素有"笔中之冠"的美誉。湖笔的制作历史可追溯到两千多年前的春秋战国时期，在唐代已享有盛名，明清时期更是达到顶峰。</p>
+                        <p>善琏镇作为湖笔的发源地，自古以来就是文房四宝中毛笔的重要生产基地。当地制笔工艺世代相传，形成了独特的湖笔制作技艺，被列入国家级非物质文化遗产。</p>
+                        <div class="highlight-box">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"毛颖之技甲天下"，这是古人对湖笔品质的最高赞誉。</p>
+                        </div>
+                    </div>
+                    <div class="knowledge-image">
+                        <img src="images/brush-03.JPG" alt="传统湖笔">
+                        <div class="image-caption">传统湖笔制作工艺</div>
+                    </div>
+                </div>
+
+                <!-- 制作工艺 -->
+                <div class="knowledge-section reverse">
+                    <div class="knowledge-text">
+                        <h3><i class="fas fa-tools"></i> 传统制笔工艺</h3>
+                        <p>湖笔的制作工艺极其复杂，需要经过选料、水盆、干作、镶笔等120多道工序。每一道工序都需要精湛的技艺和丰富的经验。</p>
+                        <div class="craft-steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>选料</h4>
+                                    <p>精选优质动物毛料，如山羊毛、黄鼠狼毛、兔毛等</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>水盆</h4>
+                                    <p>将毛料进行清洗、分类、整理，去除杂质</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>干作</h4>
+                                    <p>将处理好的毛料制成笔头，包括配毛、成型等工序</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>镶笔</h4>
+                                    <p>将笔头装入笔杆，完成整支毛笔的制作</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="knowledge-image">
+                        <img src="images/brush-05.JPG" alt="制笔工艺">
+                        <div class="image-caption">精湛的制笔技艺</div>
+                    </div>
+                </div>
+
+                <!-- 毛笔材质 -->
+                <div class="knowledge-section">
+                    <div class="knowledge-text">
+                        <h3><i class="fas fa-feather-alt"></i> 毛笔材质与特性</h3>
+                        <p>毛笔的品质很大程度上取决于所用的毛料。不同的动物毛料具有不同的特性，适合不同的书写需求。</p>
+                        <div class="material-grid">
+                            <div class="material-card">
+                                <div class="material-icon">🐐</div>
+                                <h4>羊毫</h4>
+                                <p>柔软有弹性，储墨量大，适合写大字和行草书</p>
+                                <div class="material-features">
+                                    <span class="feature-tag">柔软</span>
+                                    <span class="feature-tag">吸墨</span>
+                                    <span class="feature-tag">大字</span>
+                                </div>
+                            </div>
+                            <div class="material-card">
+                                <div class="material-icon">🦝</div>
+                                <h4>狼毫</h4>
+                                <p>弹性好，锋锐，适合写小楷和工笔画</p>
+                                <div class="material-features">
+                                    <span class="feature-tag">弹性</span>
+                                    <span class="feature-tag">锋锐</span>
+                                    <span class="feature-tag">小楷</span>
+                                </div>
+                            </div>
+                            <div class="material-card">
+                                <div class="material-icon">🐰</div>
+                                <h4>兔毫</h4>
+                                <p>毛质细腻，锋颖尖锐，适合精细工作</p>
+                                <div class="material-features">
+                                    <span class="feature-tag">细腻</span>
+                                    <span class="feature-tag">精细</span>
+                                    <span class="feature-tag">尖锐</span>
+                                </div>
+                            </div>
+                            <div class="material-card">
+                                <div class="material-icon">🎋</div>
+                                <h4>兼毫</h4>
+                                <p>混合不同毛料，兼具各种特性，适用性广</p>
+                                <div class="material-features">
+                                    <span class="feature-tag">混合</span>
+                                    <span class="feature-tag">平衡</span>
+                                    <span class="feature-tag">通用</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="knowledge-image">
+                        <img src="images/brush-07.JPG" alt="不同材质毛笔">
+                        <div class="image-caption">多种材质毛笔展示</div>
+                    </div>
+                </div>
+
+                <!-- 毛笔保养 -->
+                <div class="knowledge-section reverse">
+                    <div class="knowledge-text">
+                        <h3><i class="fas fa-heart"></i> 毛笔使用与保养</h3>
+                        <p>正确的使用和保养方法能够大大延长毛笔的使用寿命，保持良好的书写效果。</p>
+                        <div class="care-tips">
+                            <div class="tip-category">
+                                <h4><i class="fas fa-play-circle"></i> 开笔使用</h4>
+                                <ul>
+                                    <li>新笔使用前需要开笔，用温水慢慢浸润笔头</li>
+                                    <li>不要用力拉扯笔毛，让其自然散开</li>
+                                    <li>开笔时间通常需要10-30分钟</li>
+                                </ul>
+                            </div>
+                            <div class="tip-category">
+                                <h4><i class="fas fa-brush"></i> 日常使用</h4>
+                                <ul>
+                                    <li>使用时保持笔杆垂直，用腕力控制笔锋</li>
+                                    <li>适量蘸墨，避免墨汁过多影响书写</li>
+                                    <li>写字时轻重有度，保护笔尖</li>
+                                </ul>
+                            </div>
+                            <div class="tip-category">
+                                <h4><i class="fas fa-spa"></i> 清洁保养</h4>
+                                <ul>
+                                    <li>使用后立即用清水清洗干净</li>
+                                    <li>轻压笔头去除多余水分，整理笔形</li>
+                                    <li>悬挂或平放阴干，避免阳光直射</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="knowledge-image">
+                        <img src="images/brush-09.JPG" alt="毛笔保养">
+                        <div class="image-caption">正确的毛笔保养方法</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 特色介绍 -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>为什么选择颖蕾湖笔？</h2>
+                <p class="section-subtitle">四十年匠心传承，每一支笔都承载着深厚的文化底蕴</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>四十年传承</h3>
+                    <p>颖蕾牌湖笔已经创建有四十多年，传承湖笔传统制作工艺，每一支笔都凝聚着深厚的历史文化底蕴。</p>
+                    <div class="feature-highlight">世代传承</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>匠心手作</h3>
+                    <p>黄惠琴老师亲手制作，一生守艺只为笔尖上的美。每道工序都精雕细琢，追求完美品质。</p>
+                    <div class="feature-highlight">纯手工制作</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>质量保证</h3>
+                    <p>以质量赢得市场，信誉至上诚信经营，选用优质原料，严格把控每一道工序，回购率超高。</p>
+                    <div class="feature-highlight">品质保证</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>贴心服务</h3>
+                    <p>售后服务为重点，可通过推荐达成合作，快递邮寄全国。专业的毛笔使用指导和保养建议。</p>
+                    <div class="feature-highlight">专业服务</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品展示 -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>精品毛笔系列</h2>
+                <p class="section-subtitle">精选优质材料，传统工艺制作，满足不同书写需求</p>
+            </div>
+            <div class="product-filters">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th"></i> 全部产品
+                </button>
+                <button class="filter-btn" data-filter="large">
+                    <i class="fas fa-font"></i> 大楷笔
+                </button>
+                <button class="filter-btn" data-filter="medium">
+                    <i class="fas fa-pencil-alt"></i> 中楷笔
+                </button>
+                <button class="filter-btn" data-filter="small">
+                    <i class="fas fa-feather"></i> 小楷笔
+                </button>
+                <button class="filter-btn" data-filter="set">
+                    <i class="fas fa-box"></i> 套装系列
+                </button>
+            </div>
+            <div class="products-grid" id="products-grid">
+                <!-- 产品将通过JavaScript动态加载 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>关于颖蕾湖笔</h2>
+                    <p>颖蕾牌湖笔已经创建有四十多年，由黄惠琴老师亲手制作。我们以质量赢得市场，信誉至上诚信经营为原则，售后服务为重点。</p>
+                    <p>"一生守艺只为笔尖上的美"——这句话完美诠释了黄惠琴老师的匠心精神。从制作毛笔到毛笔的保养，再到毛笔在书画中的运用选择，每一个环节都体现了我们对传统工艺的坚持和对品质的追求。</p>
+                    <p>我们位于中国毛笔之乡——湖州市南浔区善琏镇，这里是湖笔的发源地，有着深厚的制笔文化底蕴。在这片土地上，我们传承着千年的制笔技艺，将传统工艺与现代需求完美结合。</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
+                            <h3>40+年</h3>
+                            <p>品牌历史</p>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-icon"><i class="fas fa-users"></i></div>
+                            <h3>1000+</h3>
+                            <p>满意客户</p>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <h3>善琏镇</h3>
+                            <p>湖笔之乡</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-frame">
+                        <img src="images/brush-02.JPG" alt="黄惠琴老师制笔工艺">
+                        <div class="image-overlay">
+                            <div class="overlay-text">
+                                <h3>黄惠琴老师</h3>
+                                <p>四十年制笔匠人</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>联系我们</h2>
+                <p class="section-subtitle">欢迎咨询定制，我们将为您推荐最适合的毛笔</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>实体店地址</h3>
+                            <p>湖州市南浔区善琏镇湖笔街95、97号</p>
+                            <small>中国毛笔之乡 · 湖笔发源地</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-weixin"></i>
+                        </div>
+                        <div>
+                            <h3>小红书</h3>
+                            <p>颖蕾牌湖笔（黄惠琴手作）</p>
+                            <p>小红书号：sxy9589</p>
+                            <small>关注我们了解更多毛笔知识</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>电话咨询</h3>
+                            <p>欢迎来电咨询定制</p>
+                            <small>提供专业的毛笔选购建议</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <div>
+                            <h3>服务特色</h3>
+                            <p>不能亲自来实体店，可通过推荐达成合作</p>
+                            <small>全国快递包邮 · 支持定制</small>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <h3><i class="fas fa-envelope"></i> 留言咨询</h3>
+                    <div class="form-row">
+                        <input type="text" placeholder="您的姓名" required>
+                        <input type="email" placeholder="您的邮箱" required>
+                    </div>
+                    <input type="tel" placeholder="您的电话">
+                    <textarea placeholder="您的留言（请告诉我们您的书法需求，我们会为您推荐合适的毛笔）" rows="5" required></textarea>
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i> 发送留言
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 购物车侧边栏 -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> 购物车</h3>
+            <button class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- 购物车商品将动态添加 -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>总计: ¥<span id="cart-total">0</span></span>
+            </div>
+            <button class="checkout-btn">
+                <i class="fas fa-credit-card"></i> 立即结算
+            </button>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>颖蕾湖笔</h3>
+                    <p>四十年匠心传承，黄惠琴手作精品</p>
+                    <p class="footer-motto">"一生守艺只为笔尖上的美"</p>
+                    <div class="social-links">
+                        <a href="https://www.xiaohongshu.com/user/profile/6535d5ce0000000006004914" target="_blank" title="小红书">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" title="微信">
+                            <i class="fab fa-weixin"></i>
+                        </a>
+                        <a href="#" title="QQ">
+                            <i class="fab fa-qq"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#home"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="#brush-knowledge"><i class="fas fa-book-open"></i> 毛笔文化</a></li>
+                        <li><a href="#products"><i class="fas fa-shopping-bag"></i> 产品展示</a></li>
+                        <li><a href="#about"><i class="fas fa-info-circle"></i> 关于我们</a></li>
+                        <li><a href="#contact"><i class="fas fa-envelope"></i> 联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>客户服务</h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-shipping-fast"></i> 配送信息</a></li>
+                        <li><a href="#"><i class="fas fa-heart"></i> 毛笔保养</a></li>
+                        <li><a href="#"><i class="fas fa-book"></i> 使用指南</a></li>
+                        <li><a href="#"><i class="fas fa-tools"></i> 定制服务</a></li>
+                        <li><a href="#"><i class="fas fa-question-circle"></i> 常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>联系方式</h4>
+                    <div class="contact-info-footer">
+                        <p><i class="fas fa-map-marker-alt"></i> 湖州市南浔区善琏镇湖笔街95、97号</p>
+                        <p><i class="fab fa-weixin"></i> 小红书：sxy9589</p>
+                        <p><i class="fas fa-globe"></i> IP属地：浙江</p>
+                        <p><i class="fas fa-award"></i> 国家级非遗传承</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 颖蕾湖笔 - 黄惠琴手作. 版权所有 | 四十年传承工艺 | 
+                   <a href="https://www.xiaohongshu.com/user/profile/6535d5ce0000000006004914" target="_blank">关注我们的小红书</a>
+                </p>
+                <p class="footer-culture">传承中华文化 · 弘扬书法艺术 · 匠心制作湖笔</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
