@@ -680,100 +680,142 @@ function scrollToProducts() {
 
 // 初始化事件监听器
 function initializeEventListeners() {
-    // 汉堡菜单
-    if (hamburger) {
+    // 产品过滤按钮事件
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            filterProducts(e.target.dataset.filter);
+        });
+    });
+
+    // 移动端菜单切换
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (hamburger && navMenu) {
         hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
         });
-    }
-    
-    // 购物车图标点击
-    const cartIcon = document.querySelector('.cart-icon');
-    if (cartIcon) {
-        cartIcon.addEventListener('click', (e) => {
-            e.preventDefault();
-            cartSidebar.classList.toggle('active');
+        
+        // 点击菜单项后关闭移动端菜单
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
         });
-    }
-    
-    // 关闭购物车
-    const closeCart = document.querySelector('.close-cart');
-    if (closeCart) {
-        closeCart.addEventListener('click', () => {
-            cartSidebar.classList.remove('active');
-        });
-    }
-    
-    // 产品过滤按钮
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const category = btn.getAttribute('data-filter');
-            filterProducts(category);
-        });
-    });
-    
-    // 联系表单提交
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('感谢您的留言！我们会尽快回复您。\n也可以直接添加微信 sxy9589（沈雪英）获得更快回复。');
-            contactForm.reset();
-        });
-    }
-    
-    // 结算按钮
-    const checkoutBtn = document.querySelector('.checkout-btn');
-    if (checkoutBtn) {
-        checkoutBtn.addEventListener('click', openCheckout);
-    }
-    
-    // 点击外部关闭购物车
-    document.addEventListener('click', (e) => {
-        if (!cartSidebar.contains(e.target) && !e.target.closest('.cart-icon')) {
-            cartSidebar.classList.remove('active');
-        }
-    });
-    
-    // 结算模态框事件监听
-    document.addEventListener('click', (e) => {
-        if (e.target.classList.contains('close-checkout')) {
-            closeCheckout();
-        }
-    });
-    
-    // 结算表单提交
-    document.addEventListener('submit', (e) => {
-        if (e.target.id === 'checkout-form') {
-            submitOrder(e);
-        }
-    });
-    
-    // 导航平滑滚动
-    const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            if (targetSection) {
-                targetSection.scrollIntoView({ behavior: 'smooth' });
+        
+        // 点击菜单外部关闭菜单
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
             }
-            // 关闭移动端菜单
-            navMenu.classList.remove('active');
         });
+    }
+
+    // 购物车按钮事件
+    document.querySelector('.cart-icon').addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById('cart-sidebar').classList.add('active');
+        document.body.style.overflow = 'hidden';
     });
-    
-    // 滚动时导航栏效果
-    window.addEventListener('scroll', () => {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 100) {
-            navbar.style.background = 'rgba(248, 244, 240, 0.98)';
-        } else {
-            navbar.style.background = 'rgba(248, 244, 240, 0.95)';
+
+    // 关闭购物车按钮事件
+    document.querySelector('.close-cart').addEventListener('click', () => {
+        document.getElementById('cart-sidebar').classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+
+    // 点击购物车外部关闭
+    document.getElementById('cart-sidebar').addEventListener('click', (e) => {
+        if (e.target.id === 'cart-sidebar') {
+            document.getElementById('cart-sidebar').classList.remove('active');
+            document.body.style.overflow = 'auto';
         }
     });
+
+    // 联系表单提交事件
+    document.querySelector('.contact-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        showCartMessage('感谢您的留言！我们会尽快回复您。', 'success');
+        e.target.reset();
+    });
+
+    // 滚动事件
+    window.addEventListener('scroll', () => {
+        toggleBackToTop();
+        updateActiveNavigation();
+    });
+
+    // 结算按钮事件
+    document.querySelector('.checkout-btn').addEventListener('click', openCheckout);
+
+    // 复制订单信息按钮事件
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('copy-order-btn')) {
+            copyOrderInfo();
+        }
+    });
+
+    // 窗口大小改变事件 - 移动端适配
+    window.addEventListener('resize', () => {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (window.innerWidth > 768) {
+            // 桌面端时清除移动端菜单状态
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        }
+        
+        // 调整购物车宽度
+        const cartSidebar = document.getElementById('cart-sidebar');
+        if (window.innerWidth <= 480) {
+            cartSidebar.style.width = '100%';
+        } else {
+            cartSidebar.style.width = '400px';
+        }
+    });
+
+    // 触摸事件优化 - 移动端
+    if ('ontouchstart' in window) {
+        // 为触摸设备添加活跃状态类
+        document.addEventListener('touchstart', (e) => {
+            if (e.target.classList.contains('cta-button') || 
+                e.target.classList.contains('filter-btn') || 
+                e.target.classList.contains('add-to-cart')) {
+                e.target.classList.add('touch-active');
+            }
+        });
+        
+        document.addEventListener('touchend', (e) => {
+            setTimeout(() => {
+                document.querySelectorAll('.touch-active').forEach(el => {
+                    el.classList.remove('touch-active');
+                });
+            }, 150);
+        });
+    }
+
+    // 防止iOS Safari页面弹跳
+    document.addEventListener('touchmove', (e) => {
+        if (e.target.closest('.cart-sidebar') || e.target.closest('.nav-menu.active')) {
+            // 允许购物车和菜单内部滚动
+            return;
+        }
+        
+        // 防止页面整体滚动时的弹跳
+        if (document.body.classList.contains('menu-open')) {
+            e.preventDefault();
+        }
+    }, { passive: false });
 }
 
 // 搜索功能（可扩展）
