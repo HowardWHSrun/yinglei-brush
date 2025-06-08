@@ -136,10 +136,12 @@ const navMenu = document.querySelector('.nav-menu');
 
 // 初始化
 document.addEventListener('DOMContentLoaded', function() {
+    showPageLoader();
     displayProducts(products);
     updateCartDisplay();
     initializeEventListeners();
     createCheckoutModal();
+    initLazyLoading();
 });
 
 // 显示产品
@@ -805,6 +807,96 @@ function sortProducts(sortBy) {
     displayProducts(sortedProducts);
 }
 
+// 滚到毛笔文化区域
+function scrollToBrushKnowledge() {
+    const brushKnowledgeSection = document.getElementById('brush-knowledge');
+    if (brushKnowledgeSection) {
+        brushKnowledgeSection.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+// 返回顶部函数
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// 显示/隐藏返回顶部按钮
+function toggleBackToTop() {
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+    } else {
+        backToTopBtn.classList.remove('show');
+    }
+}
+
+// 导航高亮当前区域
+function updateActiveNavigation() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
+    
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+}
+
+// 页面加载动画
+function showPageLoader() {
+    const loader = document.createElement('div');
+    loader.className = 'page-loader';
+    loader.innerHTML = `
+        <div class="loader-content">
+            <div class="loader-brush">🖌️</div>
+            <div class="loader-text">颖蕾湖笔</div>
+            <div class="loader-subtext">四十年匠心传承</div>
+        </div>
+    `;
+    document.body.appendChild(loader);
+    
+    // 2秒后隐藏加载动画
+    setTimeout(() => {
+        loader.classList.add('hide');
+        setTimeout(() => {
+            if (loader.parentNode) {
+                loader.parentNode.removeChild(loader);
+            }
+        }, 500);
+    }, 1500);
+}
+
+// 图片懒加载
+function initLazyLoading() {
+    const images = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.add('loaded');
+                img.removeAttribute('data-src');
+                observer.unobserve(img);
+            }
+        });
+    });
+    
+    images.forEach(img => imageObserver.observe(img));
+}
+
 // 动画效果增强
 function addAnimationEffects() {
     // 观察器，用于触发动画
@@ -813,12 +905,16 @@ function addAnimationEffects() {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('in-view');
             }
         });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     });
     
     // 为所有需要动画的元素添加观察器
-    const animatedElements = document.querySelectorAll('.feature, .product-card, .about-text, .contact-item');
+    const animatedElements = document.querySelectorAll('.feature, .product-card, .about-text, .contact-item, .knowledge-section');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -832,14 +928,32 @@ window.addEventListener('load', () => {
     addAnimationEffects();
 });
 
+// 滚动事件监听
+window.addEventListener('scroll', () => {
+    toggleBackToTop();
+    updateActiveNavigation();
+    
+    // 导航栏效果
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 100) {
+        navbar.style.background = 'rgba(248, 244, 240, 0.98)';
+        navbar.style.boxShadow = '0 4px 30px rgba(139, 69, 19, 0.2)';
+    } else {
+        navbar.style.background = 'rgba(248, 244, 240, 0.95)';
+        navbar.style.boxShadow = '0 4px 30px rgba(139, 69, 19, 0.15)';
+    }
+});
+
 // 导出函数供HTML调用
 window.addToCart = addToCart;
 window.updateQuantity = updateQuantity;
 window.removeFromCart = removeFromCart;
 window.scrollToProducts = scrollToProducts;
+window.scrollToBrushKnowledge = scrollToBrushKnowledge;
 window.filterProducts = filterProducts;
 window.openCheckout = openCheckout;
 window.closeCheckout = closeCheckout;
 window.submitOrder = submitOrder;
 window.copyOrderInfo = copyOrderInfo;
-window.closeOrderConfirmation = closeOrderConfirmation; 
+window.closeOrderConfirmation = closeOrderConfirmation;
+window.scrollToTop = scrollToTop; 

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="styles.css">
     <!-- 添加Google字体 -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- 添加favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖌️</text></svg>">
 </head>
 <body>
     <!-- 导航栏 -->
@@ -24,6 +26,9 @@
                 <li><a href="#about">关于我们</a></li>
                 <li><a href="#contact">联系我们</a></li>
                 <li><a href="#cart" class="cart-icon"><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span></a></li>
+                <li><a href="index-en.html" class="language-switch" title="Switch to English">
+                    <i class="fas fa-language"></i> EN
+                </a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -426,6 +431,11 @@
         </div>
     </div>
 
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="back-to-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- 页脚 -->
     <footer class="footer">
         <div class="container">
@@ -459,11 +469,11 @@
                 <div class="footer-section">
                     <h4>客户服务</h4>
                     <ul>
-                        <li><a href="#"><i class="fas fa-shipping-fast"></i> 配送信息</a></li>
-                        <li><a href="#"><i class="fas fa-heart"></i> 毛笔保养</a></li>
-                        <li><a href="#"><i class="fas fa-book"></i> 使用指南</a></li>
-                        <li><a href="#"><i class="fas fa-tools"></i> 定制服务</a></li>
-                        <li><a href="#"><i class="fas fa-question-circle"></i> 常见问题</a></li>
+                        <li><a href="#products"><i class="fas fa-shipping-fast"></i> 配送信息</a></li>
+                        <li><a href="#brush-knowledge"><i class="fas fa-heart"></i> 毛笔保养</a></li>
+                        <li><a href="#brush-knowledge"><i class="fas fa-book"></i> 使用指南</a></li>
+                        <li><a href="#contact"><i class="fas fa-tools"></i> 定制服务</a></li>
+                        <li><a href="#contact"><i class="fas fa-question-circle"></i> 常见问题</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -478,7 +488,8 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2024 颖蕾湖笔 - 黄惠琴手作. 版权所有 | 四十年传承工艺 | 
-                   <a href="https://www.xiaohongshu.com/user/profile/6535d5ce0000000006004914" target="_blank">关注我们的小红书</a>
+                   <a href="https://www.xiaohongshu.com/user/profile/6535d5ce0000000006004914" target="_blank">关注我们的小红书</a> |
+                   <a href="index-en.html">English Version</a>
                 </p>
                 <p class="footer-culture">传承中华文化 · 弘扬书法艺术 · 匠心制作湖笔</p>
             </div>

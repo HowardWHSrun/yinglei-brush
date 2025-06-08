@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yinglei Lake Brush - Traditional Chinese Calligraphy Brush Expert</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;500;700&family=Noto+Serif+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖌️</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>Yinglei Lake Brush</h1>
+                <span>Huang Huiqin's Handcraft · 40 Years Heritage</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#brush-knowledge">Brush Culture</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#cart" class="cart-icon"><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span></a></li>
+                <li><a href="index.html" class="language-switch" title="切换到中文">
+                    <i class="fas fa-language"></i> 中文
+                </a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Yinglei Lake Brush</h1>
+            <h2>40 Years of Craftsmanship Heritage by Huang Huiqin</h2>
+            <p>Winning the market with quality, operating with integrity and reputation as principles, focusing on after-sales service. With over 40 years of brush-making experience, every brush is a masterpiece of craftsmanship. Inheriting the thousand-year Lake Brush culture, interpreting the beauty of calligraphy art.</p>
+            <div class="hero-buttons">
+                <button class="cta-button primary" onclick="scrollToProducts()">
+                    <i class="fas fa-shopping-bag"></i> Browse Products
+                </button>
+                <button class="cta-button secondary" onclick="scrollToBrushKnowledge()">
+                    <i class="fas fa-book-open"></i> Learn Brush Culture
+                </button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="image-frame">
+                <img src="images/brush-01.JPG" alt="Exquisite Calligraphy Brush Display">
+                <div class="image-overlay">
+                    <div class="overlay-text">
+                        <h3>Traditional Craft</h3>
+                        <p>Pure Handmade</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brush Culture & Knowledge -->
+    <section id="brush-knowledge" class="brush-knowledge">
+        <div class="container">
+            <div class="section-header">
+                <h2>Brush Culture & Craftsmanship</h2>
+                <p class="section-subtitle">Explore the thousand-year heritage of brush-making art and discover the unique charm of Lake Brushes</p>
+            </div>
+            
+            <!-- Brush History -->
+            <div class="knowledge-content">
+                <div class="knowledge-section">
+                    <div class="knowledge-text">
+                        <h3><i class="fas fa-scroll"></i> History of Lake Brushes</h3>
+                        <p>Lake Brush, also known as "Lake Ying", is produced in Huzhou City, Zhejiang Province, and has the reputation of "the crown of brushes". The history of Lake Brush production can be traced back to the Spring and Autumn and Warring States periods more than 2,000 years ago. It was already famous during the Tang Dynasty and reached its peak during the Ming and Qing dynasties.</p>
+                        <p>Shanlian Town, as the birthplace of Lake Brushes, has been an important production base for brushes among the Four Treasures of the Study since ancient times. The local brush-making craftsmanship has been passed down through generations, forming the unique Lake Brush production techniques, which have been listed as National Intangible Cultural Heritage.</p>
+                        <div class="highlight-box">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"The finest brush craftsmanship under heaven" - this is the highest praise from ancient people for the quality of Lake Brushes.</p>
+                        </div>
+                    </div>
+                    <div class="knowledge-image">
+                        <img src="images/brush-03.JPG" alt="Traditional Lake Brush">
+                        <div class="image-caption">Traditional Lake Brush Craftsmanship</div>
+                    </div>
+                </div>
+
+                <!-- Crafting Process -->
+                <div class="knowledge-section reverse">
+                    <div class="knowledge-text">
+                        <h3><i class="fas fa-tools"></i> Traditional Brush-Making Process</h3>
+                        <p>The production of Lake Brushes is extremely complex, requiring more than 120 processes including material selection, water basin work, dry work, and brush assembly. Each process requires exquisite skills and rich experience.</p>
+                        <div class="craft-steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Material Selection</h4>
+                                    <p>Carefully select premium animal hair materials such as goat hair, weasel hair, rabbit hair, etc.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Water Basin Work</h4>
+                                    <p>Clean, classify, and organize the hair materials, removing impurities</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Dry Work</h4>
+                                    <p>Transform processed hair materials into brush heads, including hair blending and shaping</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Brush Assembly</h4>
+                                    <p>Install the brush head into the handle, completing the entire brush construction</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="knowledge-image">
+                        <img src="images/brush-05.JPG" alt="Brush-making Craftsmanship">
+                        <div class="image-caption">Exquisite Brush-making Techniques</div>
+                    </div>
+                </div>
+
+                <!-- Brush Materials -->
+                <div class="knowledge-section">
+                    <div class="knowledge-text">
+                        <h3><i class="fas fa-feather-alt"></i> Brush Materials & Characteristics</h3>
+                        <p>The quality of a brush largely depends on the hair materials used. Different animal hairs have different characteristics, suitable for different writing needs.</p>
+                        <div class="material-grid">
+                            <div class="material-card">
+                                <div class="material-icon">🐐</div>
+                                <h4>Goat Hair</h4>
+                                <p>Soft and elastic, large ink capacity, suitable for writing large characters and running script</p>
+                                <div class="material-features">
+                                    <span class="feature-tag">Soft</span>
+                                    <span class="feature-tag">Absorbent</span>
+                                    <span class="feature-tag">Large Script</span>
+                                </div>
+                            </div>
+                            <div class="material-card">
+                                <div class="material-icon">🦝</div>
+                                <h4>Weasel Hair</h4>
+                                <p>Good elasticity and sharp tip, suitable for small regular script and fine painting</p>
+                                <div class="material-features">
+                                    <span class="feature-tag">Elastic</span>
+                                    <span class="feature-tag">Sharp</span>
+                                    <span class="feature-tag">Small Script</span>
+                                </div>
+                            </div>
+                            <div class="material-card">
+                                <div class="material-icon">🐰</div>
+                                <h4>Rabbit Hair</h4>
+                                <p>Fine texture and sharp tip, suitable for detailed work</p>
+                                <div class="material-features">
+                                    <span class="feature-tag">Fine</span>
+                                    <span class="feature-tag">Detailed</span>
+                                    <span class="feature-tag">Sharp</span>
+                                </div>
+                            </div>
+                            <div class="material-card">
+                                <div class="material-icon">🎋</div>
+                                <h4>Mixed Hair</h4>
+                                <p>Combines different hair materials, featuring various characteristics with wide applicability</p>
+                                <div class="material-features">
+                                    <span class="feature-tag">Mixed</span>
+                                    <span class="feature-tag">Balanced</span>
+                                    <span class="feature-tag">Versatile</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="knowledge-image">
+                        <img src="images/brush-07.JPG" alt="Different Material Brushes">
+                        <div class="image-caption">Various Material Brush Display</div>
+                    </div>
+                </div>
+
+                <!-- Brush Care -->
+                <div class="knowledge-section reverse">
+                    <div class="knowledge-text">
+                        <h3><i class="fas fa-heart"></i> Brush Usage & Maintenance</h3>
+                        <p>Proper usage and maintenance methods can greatly extend the lifespan of brushes and maintain good writing effects.</p>
+                        <div class="care-tips">
+                            <div class="tip-category">
+                                <h4><i class="fas fa-play-circle"></i> First-time Use</h4>
+                                <ul>
+                                    <li>New brushes need opening before use, soak the brush head slowly in warm water</li>
+                                    <li>Don't pull the brush hair forcefully, let it spread naturally</li>
+                                    <li>Opening time usually takes 10-30 minutes</li>
+                                </ul>
+                            </div>
+                            <div class="tip-category">
+                                <h4><i class="fas fa-brush"></i> Daily Usage</h4>
+                                <ul>
+                                    <li>Keep the brush handle vertical during use, control the brush tip with wrist strength</li>
+                                    <li>Dip appropriate amount of ink, avoid excessive ink affecting writing</li>
+                                    <li>Write with proper pressure to protect the brush tip</li>
+                                </ul>
+                            </div>
+                            <div class="tip-category">
+                                <h4><i class="fas fa-spa"></i> Cleaning & Care</h4>
+                                <ul>
+                                    <li>Clean with clear water immediately after use</li>
+                                    <li>Gently press the brush head to remove excess water and reshape</li>
+                                    <li>Hang or lay flat to air dry, avoid direct sunlight</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="knowledge-image">
+                        <img src="images/brush-09.JPG" alt="Brush Maintenance">
+                        <div class="image-caption">Proper Brush Maintenance Methods</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Yinglei Lake Brush?</h2>
+                <p class="section-subtitle">40 years of craftsmanship heritage, each brush carries deep cultural heritage</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>40 Years Heritage</h3>
+                    <p>Yinglei Lake Brush brand has been established for over 40 years, inheriting traditional Lake Brush craftsmanship. Each brush embodies deep historical and cultural heritage.</p>
+                    <div class="feature-highlight">Generational Heritage</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Handcrafted with Dedication</h3>
+                    <p>Personally crafted by Master Huang Huiqin, dedicating a lifetime to the art of brush tips. Every process is meticulously crafted, pursuing perfect quality.</p>
+                    <div class="feature-highlight">Pure Handmade</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Quality Assurance</h3>
+                    <p>Winning the market with quality, operating with integrity and reputation. Using premium materials, strictly controlling every process, with super high repurchase rate.</p>
+                    <div class="feature-highlight">Quality Guaranteed</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Thoughtful Service</h3>
+                    <p>Focusing on after-sales service, cooperation through recommendations, express delivery nationwide. Professional brush usage guidance and maintenance advice.</p>
+                    <div class="feature-highlight">Professional Service</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Premium Brush Collection</h2>
+                <p class="section-subtitle">Selected premium materials, traditional craftsmanship, meeting different writing needs</p>
+            </div>
+            <div class="product-filters">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th"></i> All Products
+                </button>
+                <button class="filter-btn" data-filter="large">
+                    <i class="fas fa-font"></i> Large Script
+                </button>
+                <button class="filter-btn" data-filter="medium">
+                    <i class="fas fa-pencil-alt"></i> Medium Script
+                </button>
+                <button class="filter-btn" data-filter="small">
+                    <i class="fas fa-feather"></i> Small Script
+                </button>
+                <button class="filter-btn" data-filter="set">
+                    <i class="fas fa-box"></i> Sets
+                </button>
+            </div>
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be loaded dynamically through JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Yinglei Lake Brush</h2>
+                    <p>Yinglei Lake Brush brand has been established for over 40 years, personally crafted by Master Huang Huiqin. We operate with the principle of winning the market with quality, integrity and reputation first, focusing on after-sales service.</p>
+                    <p>"Dedicating a lifetime to the art of brush tips" - this phrase perfectly interprets Master Huang Huiqin's craftsmanship spirit. From brush making to brush maintenance, to the selection and application of brushes in calligraphy and painting, every aspect reflects our persistence in traditional craftsmanship and pursuit of quality.</p>
+                    <p>We are located in Shanlian Town, Nanxun District, Huzhou City - the hometown of Chinese brushes, which is the birthplace of Lake Brushes with deep brush-making cultural heritage. On this land, we inherit thousand-year brush-making techniques, perfectly combining traditional craftsmanship with modern needs.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
+                            <h3>40+ Years</h3>
+                            <p>Brand History</p>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-icon"><i class="fas fa-users"></i></div>
+                            <h3>1000+</h3>
+                            <p>Satisfied Customers</p>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <h3>Shanlian</h3>
+                            <p>Lake Brush Hometown</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-frame">
+                        <img src="images/brush-02.JPG" alt="Master Huang Huiqin's Brush-making Craftsmanship">
+                        <div class="image-overlay">
+                            <div class="overlay-text">
+                                <h3>Master Huang Huiqin</h3>
+                                <p>40 Years Brush Craftsman</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p class="section-subtitle">Welcome to inquire about customization, we will recommend the most suitable brush for you</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Physical Store Address</h3>
+                            <p>No. 95 & 97, Lake Brush Street, Shanlian Town, Nanxun District, Huzhou City</p>
+                            <small>Chinese Brush Hometown · Lake Brush Birthplace</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-weixin"></i>
+                        </div>
+                        <div>
+                            <h3>Social Media</h3>
+                            <p>Yinglei Lake Brush (Huang Huiqin's Handcraft)</p>
+                            <p>XiaoHongShu ID: sxy9589</p>
+                            <small>Follow us to learn more about brush knowledge</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Phone Consultation</h3>
+                            <p>Welcome to call for customization consultation</p>
+                            <small>Providing professional brush selection advice</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <div>
+                            <h3>Service Features</h3>
+                            <p>Can't visit our physical store? Cooperation through recommendations available</p>
+                            <small>Nationwide Express Delivery · Customization Supported</small>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <h3><i class="fas fa-envelope"></i> Leave a Message</h3>
+                    <div class="form-row">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <input type="tel" placeholder="Your Phone Number">
+                    <textarea placeholder="Your Message (Please tell us your calligraphy needs, we will recommend suitable brushes for you)" rows="5" required></textarea>
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Shopping Cart</h3>
+            <button class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be added dynamically -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total: ¥<span id="cart-total">0</span></span>
+            </div>
+            <button class="checkout-btn">
+                <i class="fas fa-credit-card"></i> Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Yinglei Lake Brush</h3>
+                    <p>40 years of craftsmanship heritage, Huang Huiqin's handcrafted premium brushes</p>
+                    <p class="footer-motto">"Dedicating a lifetime to the art of brush tips"</p>
+                    <div class="social-links">
+                        <a href="https://www.xiaohongshu.com/user/profile/6535d5ce0000000006004914" target="_blank" title="XiaoHongShu">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" title="WeChat">
+                            <i class="fab fa-weixin"></i>
+                        </a>
+                        <a href="#" title="QQ">
+                            <i class="fab fa-qq"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#brush-knowledge"><i class="fas fa-book-open"></i> Brush Culture</a></li>
+                        <li><a href="#products"><i class="fas fa-shopping-bag"></i> Products</a></li>
+                        <li><a href="#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#products"><i class="fas fa-shipping-fast"></i> Shipping Info</a></li>
+                        <li><a href="#brush-knowledge"><i class="fas fa-heart"></i> Brush Care</a></li>
+                        <li><a href="#brush-knowledge"><i class="fas fa-book"></i> Usage Guide</a></li>
+                        <li><a href="#contact"><i class="fas fa-tools"></i> Custom Service</a></li>
+                        <li><a href="#contact"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <div class="contact-info-footer">
+                        <p><i class="fas fa-map-marker-alt"></i> No. 95 & 97, Lake Brush Street, Shanlian Town, Nanxun District, Huzhou City</p>
+                        <p><i class="fab fa-weixin"></i> XiaoHongShu: sxy9589</p>
+                        <p><i class="fas fa-globe"></i> Location: Zhejiang, China</p>
+                        <p><i class="fas fa-award"></i> National Intangible Cultural Heritage</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Yinglei Lake Brush - Huang Huiqin's Handcraft. All Rights Reserved | 40 Years Heritage Craftsmanship | 
+                   <a href="https://www.xiaohongshu.com/user/profile/6535d5ce0000000006004914" target="_blank">Follow our XiaoHongShu</a> |
+                   <a href="index.html">中文版本</a>
+                </p>
+                <p class="footer-culture">Inheriting Chinese Culture · Promoting Calligraphy Art · Crafting Lake Brushes with Dedication</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script-en.js"></script>
+</body>
+</html> 
